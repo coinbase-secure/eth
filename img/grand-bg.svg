@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="800px" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>grand-bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-240.000000, -220.000000)" opacity="0.400000006">
+        <g id="Section-1" transform="translate(-1.000000, -280.000000)">
+            <g id="Group-2">
+                <g id="case2" transform="translate(99.000000, 387.000000)">
+                    <g id="Group-5" transform="translate(0.000000, 47.000000)">
+                        <g id="line-g" opacity="0.100000001" transform="translate(151.000000, 66.000000)">
+                            <rect id="canvas" x="0" y="0" width="800" height="800"></rect>
+                            <path d="M489.5,400 L749.502427,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                            <path d="M50,400 L310.002427,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                        </g>
+                        <g id="Group-6" opacity="0.300000012">
+                            <g id="line-g" transform="translate(551.000000, 466.000000) rotate(-8.000000) translate(-551.000000, -466.000000) translate(51.000000, 66.000000)">
+                                <rect id="canvas" x="100" y="0" width="800" height="800"></rect>
+                                <path d="M739.5,400 L999.502427,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                                <path d="M0,400 L260.002427,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                            </g>
+                            <g id="line-g" transform="translate(551.000000, 466.000000) rotate(8.000000) translate(-551.000000, -466.000000) translate(51.000000, 66.000000)">
+                                <rect id="canvas" x="100" y="0" width="800" height="800"></rect>
+                                <path d="M739.5,400 L999.502427,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                                <path d="M0,400 L260.002427,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                            </g>
+                        </g>
+                        <g id="Group-7" transform="translate(124.000000, 39.000000)" opacity="0.199999988">
+                            <g id="line-g" transform="translate(427.000000, 427.000000) rotate(4.000000) translate(-427.000000, -427.000000) translate(27.000000, 27.000000)">
+                                <rect id="canvas" x="0" y="0" width="800" height="800"></rect>
+                                <path d="M579.5,400 L639.5,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                                <path d="M160,400 L220,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                            </g>
+                            <g id="line-g" transform="translate(427.000000, 427.000000) rotate(-4.000000) translate(-427.000000, -427.000000) translate(27.000000, 27.000000)">
+                                <rect id="canvas" x="0" y="0" width="800" height="800"></rect>
+                                <path d="M579.5,400 L639.5,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                                <path d="M160,400 L220,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                            </g>
+                        </g>
+                        <g id="Group-6" transform="translate(131.000000, 66.000000)" opacity="0.149999991">
+                            <g id="line-g" transform="translate(420.000000, 400.000000) rotate(-4.000000) translate(-420.000000, -400.000000) ">
+                                <rect id="canvas" x="20" y="0" width="800" height="800"></rect>
+                                <path d="M739.5,400 L839.5,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                                <path d="M0,400 L100,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                            </g>
+                            <g id="line-g" transform="translate(420.000000, 400.000000) rotate(4.000000) translate(-420.000000, -400.000000) ">
+                                <rect id="canvas" x="20" y="0" width="800" height="800"></rect>
+                                <path d="M739.5,400 L839.5,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                                <path d="M0,400 L100,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="Group-7" transform="translate(38.000000, 0.000000)" opacity="0.049999997">
+                        <g id="line-g" transform="translate(513.000000, 513.000000) rotate(-16.000000) translate(-513.000000, -513.000000) translate(113.000000, 113.000000)">
+                            <rect id="canvas" x="0" y="0" width="800" height="800"></rect>
+                            <path d="M544.5,400 L694.5,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                            <path d="M105,400 L255,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                        </g>
+                        <g id="line-g" transform="translate(513.000000, 513.000000) rotate(16.000000) translate(-513.000000, -513.000000) translate(113.000000, 113.000000)">
+                            <rect id="canvas" x="0" y="0" width="800" height="800"></rect>
+                            <path d="M544.5,400 L694.5,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                            <path d="M105,400 L255,400" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
